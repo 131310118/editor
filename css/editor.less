@@ -1,0 +1,43 @@
+#kingEditor {
+  width: 940px;
+  height: 500px;
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  #kETools{
+    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #d4d4d4;
+    box-shadow: 0 1px 4px rgba(204, 204, 204, 0.6);
+    padding:2px;
+  }
+  .kETool_btn{
+    display:inline-block;
+    width:22px;
+    height:22px;
+    vertical-align: top;
+    &:hover{
+      border:1px solid #dcac6c;
+      width:20px;
+      height:20px;
+      background-color: #fff5d4;
+    }
+    &.checked{
+      width:20px;
+      height:20px;
+      background-color: #ffe69f;
+      border: 1px solid #dcac6c;
+    }
+  }
+  .kETool_bg{
+    margin: 1px;
+    background-image: url('../image/icons.png');
+  }
+  #kETool_i{
+    background-position: -60px 0;
+  }
+  #kETool_u{
+    background-position: -140px 0;
+  }
+}
