@@ -520,6 +520,42 @@ var KEStatus = {
     },
     isBlock:function(element) {
         return (element.style.display == 'block' || (element.style.display == '' && element.nodeName == 'P'));
+    },
+    // 扩展对象方法
+    /*
+    *   将source对象中的属性扩展到target对象上，传参 source 的值可以是 undefined、function、object,
+    *   @method extend
+    *   @param { Object } target 目标对象， 新的属性将附加到该对象上
+    *   @param { Object } source 源对象， 该对象的属性会被附加到target对象上
+    *   @param { Boolean } isKeepTarget 是否保留目标对象中与源对象中属性名相同的属性
+    *   @return { Object } 返回target对象
+    *   例：
+    *   layout.utils.extend(function a() {
+    *       console.log(0)
+    *   });
+    *   例：
+    *   layout.utils.extend({
+    *       b: function () {
+    *           console.log(1)
+    *       },
+    *       c: function () {
+    *           console.log(2)
+    *       }
+    *   });
+    */
+    extend : function (source, target, bool) {
+        // 异常处理
+        try{
+            if (!source && typeof target === 'object') {
+                return target;
+            } else if (typeof source === 'function') {
+                 return (target || _)[source.name] = source;
+            } else if (typeof source === 'object') {
+                return _.updateObject(source, target || _, bool || false);
+            }
+        } catch(e) {
+            console.log(e);
+        }
     }
 };
 var KECommands = {
